@@ -1,0 +1,123 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "amplify-angularapp-dev-180816-authRole",
+			"UnauthRoleArn": "arn:aws:iam::512640579081:role/amplify-angularapp-dev-180816-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::512640579081:role/amplify-angularapp-dev-180816-authRole",
+			"Region": "us-east-1",
+			"DeploymentBucketName": "amplify-angularapp-dev-180816-deployment",
+			"UnauthRoleName": "amplify-angularapp-dev-180816-unauthRole",
+			"StackName": "amplify-angularapp-dev-180816",
+			"StackId": "arn:aws:cloudformation:us-east-1:512640579081:stack/amplify-angularapp-dev-180816/70941b80-abe0-11ea-ae7f-12c1d85cca19",
+			"AmplifyAppId": "d24ylx118totme"
+		}
+	},
+	"function": {
+		"angularapp175b9ee2CustomMessage": {
+			"build": true,
+			"providerPlugin": "awscloudformation",
+			"service": "Lambda",
+			"lastBuildTimeStamp": "2020-06-11T12:59:17.906Z",
+			"lastPackageTimeStamp": "2020-06-11T12:59:18.100Z",
+			"distZipFilename": "angularapp175b9ee2CustomMessage-62354f70574243746731-build.zip",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-angularapp-dev-180816-deployment/amplify-cfn-templates/function/angularapp175b9ee2CustomMessage-cloudformation-template.json",
+				"logicalId": "functionangularapp175b9ee2CustomMessage"
+			},
+			"lastPushTimeStamp": "2020-06-11T13:08:47.219Z",
+			"output": {
+				"Region": "us-east-1",
+				"Arn": "arn:aws:lambda:us-east-1:512640579081:function:angularapp175b9ee2CustomMessage-dev",
+				"Name": "angularapp175b9ee2CustomMessage-dev",
+				"LambdaExecutionRole": "angularapp175b9ee2CustomMessage-dev"
+			},
+			"lastPushDirHash": "HPXKad/v4O7RMH24pyn50bQ3SAk="
+		},
+		"angularapp175b9ee2PostConfirmation": {
+			"build": true,
+			"providerPlugin": "awscloudformation",
+			"service": "Lambda",
+			"lastBuildTimeStamp": "2020-06-11T12:59:17.912Z",
+			"lastPackageTimeStamp": "2020-06-11T12:59:18.301Z",
+			"distZipFilename": "angularapp175b9ee2PostConfirmation-4a37434a436b566e5573-build.zip",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-angularapp-dev-180816-deployment/amplify-cfn-templates/function/angularapp175b9ee2PostConfirmation-cloudformation-template.json",
+				"logicalId": "functionangularapp175b9ee2PostConfirmation"
+			},
+			"lastPushTimeStamp": "2020-06-11T13:08:47.219Z",
+			"output": {
+				"Region": "us-east-1",
+				"Arn": "arn:aws:lambda:us-east-1:512640579081:function:angularapp175b9ee2PostConfirmation-dev",
+				"Name": "angularapp175b9ee2PostConfirmation-dev",
+				"LambdaExecutionRole": "angularapp175b9ee2PostConfirmation-dev"
+			},
+			"lastPushDirHash": "nAppLCv71qXrG3Ak7M8OyG9uBDA="
+		}
+	},
+	"auth": {
+		"angularapp175b9ee2": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "angularapp175b9ee2CustomMessage",
+					"triggerProvider": "Cognito",
+					"attributes": [
+						"Arn",
+						"Name"
+					]
+				},
+				{
+					"category": "function",
+					"resourceName": "angularapp175b9ee2PostConfirmation",
+					"triggerProvider": "Cognito",
+					"attributes": [
+						"Arn",
+						"Name"
+					]
+				}
+			],
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-angularapp-dev-180816-deployment/amplify-cfn-templates/auth/angularapp175b9ee2-cloudformation-template.yml",
+				"logicalId": "authangularapp175b9ee2"
+			},
+			"lastPushTimeStamp": "2020-06-11T13:08:47.219Z",
+			"output": {
+				"AppClientSecret": "jihbv72g2f21tdckt1iu0tvd8mdb6hh9343egqd311p7ephtvcs",
+				"UserPoolId": "us-east-1_Wqaeyh5Wr",
+				"AppClientIDWeb": "408gb0pu2vpnhrasnli4ehlfuh",
+				"AppClientID": "411f2oqa509letd6afdpa5pq6o",
+				"IdentityPoolId": "us-east-1:c6e15b7c-2b47-4906-97ec-71504503cfab",
+				"IdentityPoolName": "angularapp175b9ee2_identitypool_175b9ee2__dev",
+				"UserPoolName": "angularapp175b9ee2_userpool_175b9ee2"
+			},
+			"lastPushDirHash": "pPenQRn2S1DKvTvQKOBAjNY51zY="
+		}
+	},
+	"api": {
+		"angularapp": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authangularapp175b9ee2"
+						}
+					}
+				},
+				"GraphQLAPIIdOutput": "uiubygms3ja63i3mudyucw5vfu",
+				"GraphQLAPIEndpointOutput": "https://yzm3htvtqbdbbnm6dhf2pd2nrq.appsync-api.us-east-1.amazonaws.com/graphql"
+			},
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-angularapp-dev-180816-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apiangularapp"
+			},
+			"lastPushTimeStamp": "2020-06-11T13:08:47.219Z",
+			"lastPushDirHash": "UUTqjzYI1zlG7Hg6KD2I6Mihh6s="
+		}
+	}
+}

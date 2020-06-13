@@ -1,0 +1,24 @@
+{
+    "trigger": true,
+    "modules": [
+        "verification-link"
+    ],
+    "parentResource": "angularapp175b9ee2",
+    "functionName": "angularapp175b9ee2CustomMessage",
+    "resourceName": "angularapp175b9ee2CustomMessage",
+    "parentStack": "auth",
+    "triggerEnvs": [
+        {
+            "key": "RESOURCENAME",
+            "value": "resourceName"
+        }
+    ],
+    "triggerDir": "C:\\Users\\sunil\\AppData\\Roaming\\npm\\node_modules\\@aws-amplify\\cli\\node_modules\\amplify-category-auth\\provider-utils\\awscloudformation\\utils/../triggers/CustomMessage",
+    "triggerTemplate": "CustomMessage.json.ejs",
+    "roleName": "angularapp175b9ee2CustomMessage",
+    "skipEdit": true,
+    "REDIRECTURL": "",
+    "EMAILSUBJECT": "test",
+    "EMAILMESSAGE": "Please verify your email",
+    "RESOURCENAME": "resourceName"
+}
